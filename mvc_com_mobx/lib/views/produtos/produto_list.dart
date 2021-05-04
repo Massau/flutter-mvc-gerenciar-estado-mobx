@@ -3,7 +3,6 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mvc_com_mobx/controllers/produto_controller.dart';
 import 'package:mvc_com_mobx/models/produto.dart';
 import 'package:mvc_com_mobx/repositories/databases/dao/produto_repository_dao.dart';
-import 'package:mvc_com_mobx/views/produtos/produto_view.dart';
 
 class ProdutoList extends StatefulWidget {
   @override
@@ -45,10 +44,8 @@ class _ProdutoListState extends State<ProdutoList> {
                                   ProdutoRepositoryDao();
                               var produto = await _produtoRepositoryDao
                                   .find(listaProdutos[index].id);
-                              // print(produto[index].nome);
                               Navigator.pushNamed(context, '/produtos/view',
                                   arguments: [produto, index]);
-                              // ProdutoView(produto, index);
                             },
                             title: Padding(
                               padding: EdgeInsets.all(8.0),

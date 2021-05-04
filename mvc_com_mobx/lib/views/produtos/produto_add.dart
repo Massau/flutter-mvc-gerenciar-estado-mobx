@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvc_com_mobx/controllers/produto_controller.dart';
 import 'package:mvc_com_mobx/models/produto.dart';
-import 'package:mvc_com_mobx/repositories/databases/dao/produto_repository_dao.dart';
 import 'package:mvc_com_mobx/shared/constantes.dart';
-// import 'package:mvc_com_mobx/shared/constantes.dart';
 
 class ProdutoAdd extends StatefulWidget {
   @override
@@ -49,22 +47,9 @@ class _ProdutoAddState extends State<ProdutoAdd> {
                   child: Text('Gravar'),
                   onPressed: produtoController.formularioValido
                       ? () async {
-                          ProdutoRepositoryDao _produtoRepositoryDao = ProdutoRepositoryDao();
-                          // Produto produto = Produto(widget.id,
-                          //     produtoController.nome, produtoController.preco);
-
-                          // var produto = Produto(this.id,
-                          //     produtoController.nome, produtoController.preco);
-
-                          // produto.id = '1';
-                          // produto?.nome = produtoController.nome;
-                          // produto?.preco = produtoController.preco;
-                          // Produto produto;
-                          String? id = null;
-                          produto?.id = id;
                           produto?.nome = produtoController.nome;
                           produto?.preco = produtoController.preco;
-                          await _produtoRepositoryDao.save(produto ?? Produto(null, '', ''));
+                          await produtoRepositoryDao.save(produto ?? Produto(null, '', ''));
 
                           Navigator.pushNamed(context, '/produtos/list');
                         }
