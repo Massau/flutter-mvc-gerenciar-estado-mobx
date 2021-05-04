@@ -3,5 +3,4 @@ import 'package:mvc_com_mobx/repositories/databases/dao/produto_repository_dao.d
 
 final ProdutoRepositoryDao produtoRepositoryDao = ProdutoRepositoryDao();
 
-// Produto produto = Produto('', '', '');
 Produto? produto;

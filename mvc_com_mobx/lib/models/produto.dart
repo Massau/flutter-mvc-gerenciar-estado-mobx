@@ -1,5 +1,5 @@
 class Produto {
-  var id;
+  int? id;
   String nome;
   String preco;
 
@@ -19,12 +19,4 @@ class Produto {
     nome = json['nome'],
     preco = json['preco'];
 
-  // Map<String, dynamic> toJson() {
-  //   final Map<String, dynamic> data = Map<String, dynamic>();
-  //   data['id'] = this.id;
-  //   data['nome'] = this.nome;
-  //   data['preco'] = this.preco;
-
-  //   return data;
-  // }
 }
