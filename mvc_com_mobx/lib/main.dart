@@ -11,14 +11,16 @@ class Inicio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       routes: {
         '/': (context) => ProdutoAdd(),
         '/produtos/list': (context) => ProdutoList(),
-        '/produtos/view': (context) => ProdutoView(ModalRoute.of(context)!.settings.arguments, ModalRoute.of(context)!.settings.arguments),
+        '/produtos/view': (context) => ProdutoView(
+              ModalRoute.of(context)!.settings.arguments,
+              ModalRoute.of(context)!.settings.arguments,
+            ),
       },
       initialRoute: '/',
     );
